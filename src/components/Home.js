@@ -2,52 +2,41 @@ import React, { useState, useEffect, useContext } from 'react'
 import { UserContext } from '../App';
 // import {Link} from 'react-router-dom';
 import M from 'materialize-css';
+import { Link } from 'react-router-dom';
 const Home = () => {
 
     const { state, dispatch } = useContext(UserContext);
     //const [data, setData] = useState('');
     
-    useEffect(() => {
-        fetch('/check', {
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
-            }
-        }).then(res => res.json())
-            .then(result => {
-                console.log(result);
-                if (result.error) {
-                    //M.toast({html: result.error , classes:"#c62828 red darken-3"})
-                } else {
-                    M.toast({ html: result.Message, classes: "#43a047 green darken-1" })
-                }
-            })
-    }, [])
+    // useEffect(() => {
+    //     fetch('/check', {
+    //         headers: {
+    //             "Authorization": "Bearer " + localStorage.getItem("jwt")
+    //         }
+    //     }).then(res => res.json())
+    //         .then(result => {
+    //             console.log(result);
+    //             if (result.error) {
+    //                 //M.toast({html: result.error , classes:"#c62828 red darken-3"})
+    //             } else {
+    //                 M.toast({ html: result.Message, classes: "#43a047 green darken-1" })
+    //             }
+    //         })
+    // }, [])
 
     const renderButton = () => {
         if (state) {
         return[
-                <a style={{ height: "75px", 
-                            paddingTop: "9px", 
-                            width: "270px", 
-                            fontSize: "20px", 
-                            borderRadius: "10px", 
-                            marginRight: "10px" }} class="waves-effect waves-light btn-large #f57f17 yellow darken-4">Book Appointment</a>,
-                <a style={{ height: "75px", 
-                            paddingTop: "9px", 
-                            width: "270px", 
-                            fontSize: "20px", 
-                            borderRadius: "10px", 
-                            marginLeft: "10px" }} class="waves-effect waves-light btn-large #f57f17 yellow darken-4">Buy Products</a>
+                <a  className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
+                        <Link style={{color:"white"}} to="/appointment">Book Appointment</Link></a>,
+                <a  className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
+                        <Link style={{color:"white"}} to="/products">Buy Products</Link></a>,
             ]
         }
         else {
         return[
-                <a style={{ height: "75px", 
-                            paddingTop: "9px", 
-                            width: "270px", 
-                            fontSize: "20px", 
-                            borderRadius: "10px", 
-                            marginLeft: "10px" }} class="waves-effect waves-light btn-large #f57f17 yellow darken-4">Buy Products</a>
+                <a class="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
+                        <Link style={{color:"white"}} to="/products">Buy Products</Link></a>,
             ]
         }
     }

@@ -13,6 +13,15 @@
     text-align: center;
     overflow: hidden;
 }
+/* Buttons On Home Screen */
+.home-button{
+    height: 75px; 
+    padding-top: 9px; 
+    width: 270px; 
+    font-size: 20px; 
+    border-radius : 10px; 
+    margin-right:  10px;
+}
 /* Font */
 .font{
     font-family: 'Klee One', cursive;
