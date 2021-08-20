@@ -46,7 +46,7 @@ const Signin = () => {
     return (
         <div className="my-card">
             <div className="card auth-card input-field">
-                <h3>SIGN IN</h3>
+                <h4 className="font">SIGN IN</h4>
                 <input type="text" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 <input type="password" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 <button style={{marginTop:"30px"}} className="waves-effect waves-light btn #f57f17 yellow darken-4" onClick={()=>userLogin()}>Login</button>

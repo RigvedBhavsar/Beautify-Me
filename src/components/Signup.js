@@ -43,7 +43,7 @@ const Signup=() =>{
         <div>
             <div className="my-card">
             <div className="card auth-card input-field">
-                <h3>SIGN UP</h3>
+                <h4 className="font">SIGN UP</h4>
                 <input type="text" placeholder="name" value={name} onChange={(e)=>setName(e.target.value)}/>
                 <input type="text" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 <input type="password" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>

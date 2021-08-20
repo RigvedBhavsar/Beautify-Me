@@ -6,6 +6,10 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import { reducer ,initialState } from './reducers/userReducer';
 import './App.css';
+import Appointment from './components/Appointment';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export const UserContext = createContext();
 
@@ -39,27 +43,33 @@ const Routing = ()=>{
                 <Signup/>
             </Route>
 
+            <Route path="/appointment">
+                <Appointment/>
+            </Route>
         </Switch>
 
     )
 }
-
-
-
 
 function App() {
 
     const [state , dispatch] = useReducer(reducer , initialState);
 
     return (
-        <UserContext.Provider value={{state,dispatch}}>
-            <div className="home">
-                <BrowserRouter>
-                    <Navbar/>
-                    <Routing/>
-                </BrowserRouter>
-            </div>
-            {/* Add Componet List Here */}
+        <UserContext.Provider value={{state,dispatch}}>      
+                <div className="home">
+                    <BrowserRouter>
+                        <Navbar/>
+                        <Routing/>
+                    </BrowserRouter>
+                </div>
+                {/* Add Componet List Here */}
+            
+                <div className="back-all">
+                    <About/>
+                    <Contact/>
+                    <Footer/>
+                </div>
         </UserContext.Provider>
     );
 }
