@@ -6,6 +6,7 @@ const {MONGO_URI} = require('./keys');
 const PORT = 5000;
 
 require('./models/user')
+require('./models/appointment')
 
 mongoose.connect(MONGO_URI,{
     useNewUrlParser : true,
@@ -21,7 +22,7 @@ mongoose.connection.on('error',(err)=>{
 app.use(express.json())
 
 app.use(require('./routes/auth'))
-
+app.use(require('./routes/appointment'))
 
 app.listen(PORT,()=>{
     console.log("Server is Running on",PORT);

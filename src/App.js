@@ -10,6 +10,7 @@ import Appointment from './components/Appointment';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import M from 'materialize-css';
 
 export const UserContext = createContext();
 
@@ -29,6 +30,8 @@ const Routing = ()=>{
         }
     },[])
 
+    
+    
     return(
         <Switch>
             <Route exact path="/">

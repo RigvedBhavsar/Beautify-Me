@@ -9,23 +9,25 @@ const About = () => {
                     <img src={aboutUs} className="arms" alt="pic"></img>
                 </div>
                 <div className="aboutright">
-                    <b>Hi again,</b> Morgan here.&nbsp;&nbsp;💭 Thanks for checking out my website! I created it using React, Gatsby, Netlify,
-                    and Contentful.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b>Hello Beauties !</b> Pooja here.💭Welcome to this beautiful world 
+                    also thank you for visiting my website! 
                     <br></br><br></br>
-                    What am I doing now? I'm currently studying Software Engineering at Loyola University Chicago.
-                    I'll be graduating in May of 2020, which is a year early. Cheers to getting sh*t done! At Loyola,
-                    I serve as the President of the Computer Science Student Advisory Council. I guide a group
-                    of 12 students to improve the CS department from within. Also, I
-                    tutor other undergraduates for the department. I work as a web developer for the department as well,
-                    updating and maintaining various web pages. I'm also the front-end lead for Software Systems
-                    Laboratory, which is a research group that aims to incorporate STEAHM.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    About me, I started my professional makeup artistry business, in 2017.I am a certified makeup artis. 
+                    Beside that I'm also have been a pharmacy student as well.
+                    When I tell people my background I'm always asked, how did you end up in makeup with that type of background?
+                    Well I ended up in makeup Because its my passion and I also learnt alot about cosmetics in my pharmacy course 
+                    so its helping me now to launch my own products in this world of beauty.
                     <br></br><br></br>
-                    So yeah, I guess you could say I do a lot. But I like to stay busy. In January of this year I started
-                    a tech blog, <a href="https://instagram.com/morgan.codes">@morgan.codes</a>. I've been documenting my journey as a developer on Instagram and in
-                    short, the journey has been nothing but amazing. I've met amazing developers and have made
-                    lifelong friends in the process.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Now that I have given you a little bit about me, let me tell you about my business.
+                    I am here to service all your beauty needs. If you're looking for special occasion makeup for that engagement 
+                    session, wedding, birthday, headshot, or a date night, book me as your makeup artist. I will be hosting one on 
+                    one makeup lessons, having group classes, and I will be assisting with personal shopping. 
+                    Be sure you stay tuned to my website for updates on classes, and events!
                     <br></br><br></br>
-                    <b>Let's make the world a better place with technology.</b>&nbsp;&nbsp;🧠
+                    <b>Thank you!</b>&nbsp;&nbsp;🧠
                 </div>
             </div>
         </section>
