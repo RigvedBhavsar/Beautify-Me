@@ -1,4 +1,4 @@
 module.exports={
-    MONGO_URI : "mongodb+srv://rigved:rigved@cluster0.lboig.gcp.mongodb.net/Authentication?retryWrites=true&w=majority" ,
+    MONGO_URI : "mongodb+srv://admin:admin@cluster0.f7bfw.mongodb.net/BeautifyMe?retryWrites=true&w=majority" ,
     JWT_SECRET : "qwertyuioplkjhgfdsazxcvbnm"
 }

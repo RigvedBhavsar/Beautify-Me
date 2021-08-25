@@ -9,6 +9,7 @@ const Navbar = ({totalItems}) => {
     const { state, dispatch } = useContext(UserContext);
     const history = useHistory();
     const classes = useStyles();
+    
     const renderList = () => {
         if (state) {
             return [
@@ -66,7 +67,6 @@ const Navbar = ({totalItems}) => {
         <div>
             <nav className="navbar">
                 <div className="nav-wrapper">
-                    {/* <Link to={state ? "/" : "/signin"}></Link> */}
                     <ul id="nav-mobile">
                         {renderList()}
                     </ul>

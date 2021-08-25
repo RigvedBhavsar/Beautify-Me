@@ -1,5 +1,5 @@
-import React, { useEffect, createContext, useReducer, useContext, useState } from 'react';
-import { Route, BrowserRouter, Switch, useHistory } from 'react-router-dom';
+import React, { useEffect, createContext, useReducer, useState } from 'react';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Signup from './components/Signup';
@@ -10,10 +10,9 @@ import Appointment from './components/Appointment';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import M from 'materialize-css';
+import Admin from './components/Admin';
 import { Products, Cart, Checkout } from './components';
 import { commerce } from './lib/commerce';
-
 export const UserContext = createContext();
 
 function App() {
@@ -21,11 +20,9 @@ function App() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [cart, setCart] = useState({});
     const [products, setProducts] = useState([]);
-    const history = useHistory();
     const [order, setOrder] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
-    
-    
+
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
 
@@ -81,15 +78,6 @@ function App() {
     useEffect(() => {
         fetchProducts();
         fetchCart();
-        
-        // const user = JSON.parse(localStorage.getItem("user"))
-
-        // if (user) {
-        //     dispatch({ type: "USER", payload: user })
-        //     history.push('/')
-        // } else {
-        //     history.push('/')
-        // }
     }, []);
 
     return (
@@ -97,7 +85,7 @@ function App() {
             <div className="home">
                 <BrowserRouter>
                     <Navbar totalItems={cart.total_items} />
-                    {/* Roting PRoducts */}
+                    {/* Routing */}
                     <Switch>
                         <Route exact path="/">
                             <Home />
@@ -123,15 +111,19 @@ function App() {
                             <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
                         </Route>
 
-                        <Route path="/checkout" exact>
+                        <Route exact path="/checkout">
                             <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
                         </Route>
+
+                        {/* Admin */}
+                        <Route exact path="/adminControl">
+                            <Admin />
+                        </Route>
+
                     </Switch>
-                    {/* <Routing/> */}
                 </BrowserRouter>
             </div>
             {/* Add Componet List Here */}
-
             <div className="back-all">
                 <About />
                 <Contact />

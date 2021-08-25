@@ -1,15 +1,41 @@
 import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
-
+import { useHistory } from 'react-router-dom'
+import { send } from 'emailjs-com';
+import M from 'materialize-css';
 const Contact = () => {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const history = useHistory();
+    const [toSend, setToSend] = useState({
+        from_name: '',
+        to_name: 'prachiware15@gmail.com',
+        message: '',
+        reply_to: '',
+    });
 
-    const sendMail = () => {
-
-    }
+    const handleChange = (e) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value });
+    };
+    const sendMail = (e) => {
+        e.preventDefault();
+        send(
+            "service_mzhg7mj",
+            "template_wu8bver",
+            toSend,
+            "user_z5EBYAKlTKwrafbwsRneP"
+        )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    M.toast({ html: "Thank You For Reaching Us !", classes: "#43a047 green darken-1" })
+                    //window.location.reload();
+                    //history.push('/');
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+    };
 
     return (
         <section id="contact">
@@ -18,11 +44,14 @@ const Contact = () => {
                 <div className="contact-right">
                     <div>
                         <div className="card contact-auth-card input-field">
-                            <h6 className="contact-Heading">GET IN TOUCH</h6>
-                            <input type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
-                            <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                            <input type="text" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)} />
-                            <button style={{ marginTop: "30px" }} className="waves-effect waves-light btn #f57f17 yellow darken-4" onClick={() => sendMail()}>Send</button>
+                            <form onSubmit={sendMail}>
+                                <h6 className="contact-Heading">GET IN TOUCH</h6>
+                                <input style={{ color: "#f57f17" }} type="text" name="from_name" placeholder="Name" value={toSend.from_name} onChange={handleChange} />
+                                {/* <input type="text" name='to_name' placeholder='to name' value={toSend.to_name} onChange={handleChange} /> */}
+                                <input style={{ color: "#f57f17" }} type="text" name='message' placeholder='Message' value={toSend.message} onChange={handleChange} />
+                                <input style={{ color: "#f57f17" }} type="text" name='reply_to' placeholder='Email' value={toSend.reply_to} onChange={handleChange} />
+                                <button type="submit" style={{ marginTop: "30px" }} className="waves-effect waves-light btn #f57f17 yellow darken-4" onClick={sendMail}>Send</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../App';
-// import {Link} from 'react-router-dom';
-import M from 'materialize-css';
 import { Link } from 'react-router-dom';
 const Home = () => {
 
@@ -10,17 +8,17 @@ const Home = () => {
 
     const renderButton = () => {
         if (state) {
-        return[
-                <a  className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
-                        <Link style={{color:"white"}} to="/appointment">Book Appointment</Link></a>,
-                <a  className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
-                        <Link style={{color:"white"}} to="/products">Buy Products</Link></a>,
+            return [
+                <a className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
+                    <Link style={{ color: "white" }} to="/appointment">Book Appointment</Link></a>,
+                <a className="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
+                    <Link style={{ color: "white" }} to="/products">Buy Products</Link></a>,
             ]
         }
         else {
-        return[
+            return [
                 <a class="waves-effect waves-light btn-large #f57f17 yellow darken-4 home-button">
-                        <Link style={{color:"white"}} to="/products">Buy Products</Link></a>,
+                    <Link style={{ color: "white" }} to="/products">Buy Products</Link></a>,
             ]
         }
     }

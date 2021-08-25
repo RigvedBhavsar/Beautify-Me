@@ -34,6 +34,11 @@ const Footer = () => {
 					Copyright © 2021 | Beautify Me
 				</div>
 			</div>
+			<div class="footer-copyright">
+				<div class="container" style={{ marginTop: "-40px" }}>
+					<p style={{ fontSize: "10px" }}>The Products Shown Are Only For Demo Purpose Not Intended For Selling.</p>
+				</div>
+			</div>
 		</footer>
 	)
 }
