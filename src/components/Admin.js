@@ -24,7 +24,7 @@ const Admin = () => {
     const appointmentColoums = [
         { field: "name", title: "Booked For" },
         { field: "date", title: "Date" },
-        { field: "service", title: "Email" },
+        { field: "service", title: "Services" },
         { field: "tookBy.name", title: "Booked By" }
     ];
 

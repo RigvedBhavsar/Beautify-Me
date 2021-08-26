@@ -10,10 +10,11 @@ const apmntSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    service: {
-        type: String,
-        required: true,
-    },
+    // service: {
+    //     type: String,
+    //     required: true,
+    // },
+    service:[ {type : String}],
     tookBy: {
         type: ObjectId,
         ref: "User"
